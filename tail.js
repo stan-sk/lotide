@@ -28,7 +28,7 @@ const tail = function(array) {
   return arrTail;
 };
 
-assertEqual(tail([]), []);
+assertEqual(tail([1, 2, 3, 4, 5]), [2, 3, 4 ,5]);
 assertEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
 
 // An array with only one element should yield an empty array for its tail
