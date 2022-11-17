@@ -1,3 +1,17 @@
+
+
+const eqArrays = function(actual, expected) {
+  for (let i = 0; i < actual.length; i++) {
+   if (actual[i] !== expected[i]) {
+     return false;
+   }
+  }
+  return true;
+};
+
+
+
+
 const assertArraysEqual = function(actual, expected) {
   if (actual === expected) {
     return true;
@@ -15,5 +29,5 @@ const assertArraysEqual = function(actual, expected) {
 };
 
 // TEST CODE
-console.log(assertArraysEqual([1, 2, 3], [1, 2, 3]));
-console.log(assertArraysEqual(["1", "2", "3"], ["1", "2", 3]));
+console.log(assertArraysEqua(eqArraysl([1, 2, 3], [1, 2, 3])));
+console.log(assertArraysEqual(eqArrays)["1", "2", "3"], ["1", "2", 3]);
