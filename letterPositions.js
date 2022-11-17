@@ -8,9 +8,12 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-const eqArrays = function(actual, expected) {
-  for (let i = 0; i < actual.length; i++) {
-   if (actual[i] !== expected[i]) {
+const eqArrays = function(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  for (let i = 0; i < arr1.length; i++) {
+   if (arr1[i] !== arr2[i]) {
      return false;
    }
   }
@@ -33,7 +36,7 @@ const letterPositions = function(sentence) {
 
   } 
 
-  return results;// logic to update results here
+  return results;
 }
 
 const results = letterPositions("hello world");
