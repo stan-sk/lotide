@@ -27,5 +27,5 @@ console.log(countLetters("lighthouse in the house"))
 
 
 
-// (!result[character]) 
+// (!result[character]) or (result[character] === undefined)
 //check if value exisit yet
