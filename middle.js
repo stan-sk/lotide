@@ -21,21 +21,21 @@ const assertArraysEqual = function(actual, expected) {
 
 
 
-
 // ACTUAL FUNCTION
 const middle = function(array) {
   let result = [];
-  let mid = array.length / 2;
   if (array.length <= 2) {
-    return result;
-  } else if (array.length % 2 === 1) {
-    return [array[Math.floor(mid)]];
-    } else {
-      return [array[mid - 1], array[mid]];
-   }
+    return result
+  } else if (array.length % 2 === 0) {
+    return [array[array.length/2 - 1], array[array.length/2]]
+  } else {
+    return [array[(array.length-1)/2]]
+  }
 };
 
-assertArraysEqual(middle([1]), []);
+
+
+/*assertArraysEqual(middle([1]), []);
 middle([1, 2]); // => []
 
 assertArraysEqual(middle([1, 2, 3]), [2]);
@@ -53,3 +53,4 @@ middle([1, 2, 3, 4, 5, 6]); // => [3, 4]
 
 // TEST CODE
 // ...
+*/
