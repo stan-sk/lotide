@@ -1,27 +1,7 @@
-// TEST/ASSERTION FUNCTIONS
-const eqArrays = function(actual, expected) {
-  for (let i = 0; i < actual.length; i++) {
-   if (actual[i] !== expected[i]) {
-     return false;
-   }
-  }
-  return true;
-};
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
 
 
-const assertArraysEqual = function(actual, expected) {
- let result = eqArrays(actual, expected);
-  if (result === true) {
-    assertArraysEqual(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
-  } 
-  if (result === false) {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`)
-  }
-}
-
-
-
-// ACTUAL FUNCTION
 const middle = function(array) {
   let result = [];
   if (array.length <= 2) {
@@ -33,24 +13,40 @@ const middle = function(array) {
   }
 };
 
+module.exports = middle;
+
+// assertArraysEqual(middle([1]), []);
+// middle([1, 2]); // => []
+
+// assertArraysEqual(middle([1, 2, 3]), [2]);
+// middle([1, 2, 3]); // => [2]
+
+// assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
+// middle([1, 2, 3, 4, 5]); // => [3]
+
+// assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
+// middle([1, 2, 3, 4]); // => [2, 3]
+
+// assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+// middle([1, 2, 3, 4, 5, 6]); // => [3, 4]
 
 
-/*assertArraysEqual(middle([1]), []);
-middle([1, 2]); // => []
-
-assertArraysEqual(middle([1, 2, 3]), [2]);
-middle([1, 2, 3]); // => [2]
-
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-middle([1, 2, 3, 4, 5]); // => [3]
-
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-middle([1, 2, 3, 4]); // => [2, 3]
-
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
-middle([1, 2, 3, 4, 5, 6]); // => [3, 4]
+// TEST/ASSERTION FUNCTIONS
+// const eqArrays = function(actual, expected) {
+//   for (let i = 0; i < actual.length; i++) {
+//    if (actual[i] !== expected[i]) {
+//      return false;
+//    }
+//   }
+//   return true;
+// };
 
 
-// TEST CODE
-// ...
-*/
+// const assertArraysEqual = function(actual, expected) {
+//  let result = eqArrays(actual, expected);
+//   if (result === true) {
+//     assertArraysEqual(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
+//   } 
+//   if (result === false) {
+//     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`)
+//   }

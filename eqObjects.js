@@ -25,7 +25,7 @@ const eqArrays = function(arr1, arr2) {
 // Otherwise you get back a big fat false!
 
 const eqObjects = function(object1, object2) {
-  let result = false;
+  
   let keys1 = Object.keys(object1);
   let keys2 = Object.keys(object2);
   
@@ -33,7 +33,7 @@ const eqObjects = function(object1, object2) {
     return false
   } 
   for (let key in object1) {
-    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
+    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) { 
       if (eqArrays(object1[key], object2[key]) === false) {
         return false;
       }
@@ -44,7 +44,7 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-
+module.exports = eqObjects;
 
 
 

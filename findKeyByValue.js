@@ -15,6 +15,7 @@ const findKeyByValue = function(genre, show) {
   return undefined
 }
 
+module.exports = findKeyByValue;
 
 
 const bestTVShowsByGenre = { 

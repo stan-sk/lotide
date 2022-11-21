@@ -1,24 +1,5 @@
-const assertArraysEqual = function(actual, expected) {
-  let result = eqArrays(actual, expected);
-  if (result === true) {
-    console.log(`✅✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-  if (result === false) {
-    console.log(`🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-   if (arr1[i] !== arr2[i]) {
-     return false;
-   }
-  }
-  return true;
-};
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
 
 const letterPositions = function(sentence) {
   let results = {};
@@ -39,7 +20,28 @@ const letterPositions = function(sentence) {
   return results;
 }
 
-const results = letterPositions("hello world");
-console.log(results)
-// console.log(letterPositions("hello"));
-assertArraysEqual(letterPositions("hello").e, [1]);
+module.exports = letterPositions;
+
+
+
+// const assertArraysEqual = function(actual, expected) {
+//   let result = eqArrays(actual, expected);
+//   if (result === true) {
+//     console.log(`✅✅ Assertion Passed: ${actual} === ${expected}`);
+//   }
+//   if (result === false) {
+//     console.log(`🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+//   }
+// };
+
+// const eqArrays = function(arr1, arr2) {
+//   if (arr1.length !== arr2.length) {
+//     return false;
+//   }
+//   for (let i = 0; i < arr1.length; i++) {
+//    if (arr1[i] !== arr2[i]) {
+//      return false;
+//    }
+//   }
+//   return true;
+// };

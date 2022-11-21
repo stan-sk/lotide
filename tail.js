@@ -12,10 +12,6 @@ const assertEqual = function(actual, expected) {
 // But this doesnt work with nested array []
 //['1','2',['3']].toString() === ['1','2','3'].toString() // true for code, but logic wise should be false?
 
-// TEST CODE
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual(1, 1);
-
 
 
 const tail = function(array) {
@@ -28,8 +24,4 @@ const tail = function(array) {
   return arrTail;
 };
 
-assertEqual(tail([1, 2, 3, 4, 5]), [2, 3, 4 ,5]);
-assertEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
-
-// An array with only one element should yield an empty array for its tail
-// An empty array should yield an empty array for its tail
+module.exports = tail;
